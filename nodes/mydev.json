@@ -1,6 +1,6 @@
 {
   "run_list": [
-
+    "httpd"
   ],
   "automatic": {
     "ipaddress": "mydev"
