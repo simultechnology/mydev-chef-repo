@@ -7,7 +7,7 @@
 # All rights reserved - Do Not Redistribute
 #
 
-modules = %w{php php-devel php-mbstring}
+modules = %w{php php-devel php-mbstring php-soap}
 
 modules.each_with_index { |p, index|
   package p do
