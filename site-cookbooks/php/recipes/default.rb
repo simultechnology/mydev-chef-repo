@@ -7,14 +7,14 @@
 # All rights reserved - Do Not Redistribute
 #
 
-modules = %w{php php-devel php-mbstring php-mysql php-phpunit-PHPUnit php-pecl-xdebug}
+modules = %w{php php-devel php-mbstring}
 
 modules.each_with_index { |p, index|
   package p do
     action :install
 
     if index === modules.length - 1
-      notifies :install, 'service[httpd]'
+      notifies :restart, 'service[httpd]'
     end
   end
 }
