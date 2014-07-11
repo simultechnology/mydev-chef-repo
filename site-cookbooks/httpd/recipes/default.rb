@@ -16,6 +16,13 @@ service "httpd" do
   action [:enable, :start]
 end
 
+execute "make symbolic link" do
+  command <<-EOH
+    sudo rm -rf /var/www/html
+    sudo ln -fs /vagrant /var/www/html
+  EOH
+end
+
 template "httpd.conf" do
     path "/etc/httpd/conf/httpd.conf"
     source "httpd.conf.erb"
@@ -28,3 +35,4 @@ end
 service 'iptables ' do
   action [:disable , :stop]
 end
+
