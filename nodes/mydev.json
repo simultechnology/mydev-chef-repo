@@ -2,7 +2,8 @@
   "run_list": [
     "httpd",
     "php",
-    "nodejs"
+    "nodejs",
+    "npm"
   ],
   "automatic": {
     "ipaddress": "mydev"
